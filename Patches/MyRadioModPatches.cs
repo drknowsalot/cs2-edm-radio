@@ -41,7 +41,8 @@ namespace MyRadioMod.Patches
 				]
 			);
 
-			ExtendedRadio.ExtendedRadio.CallOnRadioLoad += MyRadioMod.OnRadioLoad;
+			// ExtendedRadio.ExtendedRadio.CallOnRadioLoad += MyRadioMod.LoadMyRadio;
+			ExtendedRadio.ExtendedRadio.RegisterCustomRadioDirectory(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)+"\\CustomRadio");
 
 		}
 	}
