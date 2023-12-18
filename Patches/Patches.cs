@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.IO.Compression;
 using System.Reflection;
 using Game.SceneFlow;
 using Game.UI;
@@ -10,20 +12,19 @@ namespace MyRadioMod.Patches
 	[HarmonyPatch(typeof(GameManager), "InitializeThumbnails")]
 	internal class GameManager_InitializeThumbnails
 	{	
+
+		static readonly string pathToZip = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)+"\\CustomRadios.zip";
+		static readonly string PathToCustomRadios = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)+"\\CustomRadios";
+
 		static readonly string IconsResourceKey = $"{MyPluginInfo.PLUGIN_NAME.ToLower()}";
 
 		public static readonly string COUIBaseLocation = $"coui://{IconsResourceKey}";
 
 		static void Prefix(GameManager __instance)
-		{		
-
-			Directory.CreateDirectory(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "CustomRadio"));
-
-			string resources = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "resources");
-
-			if(!Directory.Exists(resources)) {
-				Directory.CreateDirectory(resources);
-				File.Move(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "DefaultIcon.svg"), Path.Combine(resources , "DefaultIcon.svg"));
+		{	
+			if(File.Exists(pathToZip)) {
+				ZipFile.ExtractToDirectory(pathToZip, Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+				File.Delete(pathToZip);
 			}
 
 			var gameUIResourceHandler = (GameUIResourceHandler)GameManager.instance.userInterface.view.uiSystem.resourceHandler;
@@ -45,7 +46,7 @@ namespace MyRadioMod.Patches
 			// ExtendedRadio.ExtendedRadio.CallOnRadioLoad += MyRadioMod.LoadMyRadio;
 
 			// If you uncomment the otehr one commente this one under
-			ExtendedRadio.ExtendedRadio.RegisterCustomRadioDirectory(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)+"\\CustomRadio");
+			ExtendedRadio.ExtendedRadio.RegisterCustomRadioDirectory(PathToCustomRadios);
 
 		}
 	}
