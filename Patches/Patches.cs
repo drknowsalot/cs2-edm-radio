@@ -22,10 +22,15 @@ namespace MyRadioMod.Patches
 
 		static void Prefix(GameManager __instance)
 		{	
+
+			// This code extracts the zip if it exists.
+
 			if(File.Exists(pathToZip)) {
 				ZipFile.ExtractToDirectory(pathToZip, Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
 				File.Delete(pathToZip);
 			}
+
+			// This code add your custom .svg into the game "database", so now you can use "coui://your_assembly_name_to_lower/path_to_image.svg"
 
 			var gameUIResourceHandler = (GameUIResourceHandler)GameManager.instance.userInterface.view.uiSystem.resourceHandler;
 			
@@ -41,6 +46,8 @@ namespace MyRadioMod.Patches
 					Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)
 				]
 			);
+
+			// now this lins is going to register the directory of your radio, so the mod know they need to look at this directory to load your radio.
 
 			ExtendedRadio.ExtendedRadio.RegisterCustomRadioDirectory(PathToCustomRadios);
 
