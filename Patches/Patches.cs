@@ -42,10 +42,6 @@ namespace MyRadioMod.Patches
 				]
 			);
 
-			// Uncommente to use the LoadMyRadio function in the mod/mod.cs file.
-			// ExtendedRadio.ExtendedRadio.CallOnRadioLoad += MyRadioMod.LoadMyRadio;
-
-			// If you uncomment the otehr one commente this one under
 			ExtendedRadio.ExtendedRadio.RegisterCustomRadioDirectory(PathToCustomRadios);
 
 		}
