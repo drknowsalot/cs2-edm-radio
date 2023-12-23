@@ -26,6 +26,7 @@ namespace MyRadioMod.Patches
 			// This code extracts the zip if it exists.
 
 			if(File.Exists(pathToZip)) {
+				if(Directory.Exists(PathToCustomRadios)) Directory.Delete(PathToCustomRadios, true);
 				ZipFile.ExtractToDirectory(pathToZip, Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
 				File.Delete(pathToZip);
 			}
