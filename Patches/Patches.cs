@@ -7,7 +7,7 @@ using Game.UI;
 using HarmonyLib;
 using UnityEngine;
 
-namespace MyRadioMod.Patches
+namespace drknowsalot_EDM_Radio.Patches
 {
 	[HarmonyPatch(typeof(GameManager), "InitializeThumbnails")]
 	internal class GameManager_InitializeThumbnails
