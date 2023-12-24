@@ -1,0 +1,9 @@
+{
+    "name": "drknowsalot_EDM_Radio",
+    "version_number": "1.0.0",
+    "website_url": "https://github.com/drknowsalot/cs2-edm-radio",
+    "description": "A variety of EDM radios for ExtendedRadio.",
+    "dependencies": [
+        "ExtendedRadio"
+    ]
+}
