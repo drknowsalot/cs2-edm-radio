@@ -1,6 +1,11 @@
-# MyRadioMod
+# drknowsalot's EDM Radio Network
 An EDM Radio network for use with ExtendedRadio.
 
+Will contain multiple playlists/genres in the future, however currently only has Melodic Dubstep. I took some creative freedom with the curating the genre, some songs are more dubstep and some are more melodic. Any comments or suggestions, for this playlist or future ones to be added to this EDM network, you can message me on discord @drknowsalot.
+
+Possible plans for future playlists: NCS classics, old Skrillex, melodic, ILLENIUM (my fav artist), 
+
+## Download :
 ## Requirements : 
 - [ExtendedRadio](https://github.com/AlphaGaming7780/ExtendedRadio).
 - Cities: Skylines II (lol)
