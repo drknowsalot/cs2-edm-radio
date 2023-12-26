@@ -45,8 +45,7 @@ Will contain multiple playlists/genres in the future, however currently only has
 30. Homesick - MitiS, SOUNDR
 
 > ### Any comments or requests, feel free to message me.
-> Discord: @drknowsalot
-> Possible plans for future playlists: NCS classics, old Skrillex, melodic, ILLENIUM (my fav artist)
+> Discord: @drknowsalot - Possible plans for future playlists: NCS classics, old Skrillex, melodic, ILLENIUM (my fav artist)
 
 ## Special Thanks
 
