@@ -4,7 +4,6 @@ An EDM Radio network for use with ExtendedRadio.
 Will contain multiple playlists/genres in the future, however currently only has Melodic Dubstep. I took some creative freedom with the curating the genre, some songs are more dubstep and some are more melodic.
 
 > All channels are ad-free.
-> Possible plans for future playlists: NCS classics, old Skrillex, melodic, ILLENIUM (my fav artist), 
 
 ## Download :
 (future Thunderstore link) coming soon
@@ -47,6 +46,7 @@ Will contain multiple playlists/genres in the future, however currently only has
 
 > ### Any comments or requests, feel free to message me.
 > Discord: @drknowsalot
+> Possible plans for future playlists: NCS classics, old Skrillex, melodic, ILLENIUM (my fav artist)
 
 ## Special Thanks
 
