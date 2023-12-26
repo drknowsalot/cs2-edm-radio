@@ -50,7 +50,7 @@ Will contain multiple playlists/genres in the future, however currently only has
 
 ## Special Thanks
 
-- Thanks to the creator of ExtendedRadio, Alpha Gaming aka TritonSupreme for your hard work creating the mod and providing me with help and support. Also thank you for making a [radio mod template](https://github.com/AlphaGaming7780/MyRadioMod)!
-- Thank you to Captain Of Coit for creating the original [mod template](https://github.com/Captain-Of-Coit/cities-skylines-2-mod-template) and supporting documentation. It was a huge help!
-- Also thank you to CityRat for inspiring me to create my own EDM radio. His EDM channel link can be found [here](https://thunderstore.io/c/cities-skylines-ii/p/CityRat/CityRatNetwork_EDM/).
+- Thanks to the creator of ExtendedRadio, Alpha Gaming aka TritonSupreme for your hard work creating the mod and providing me with help and support. Also thank you for making this [radio mod template](https://github.com/AlphaGaming7780/MyRadioMod)!
+- Thank you to Captain Of Coit for creating the original CS: II [mod template](https://github.com/Captain-Of-Coit/cities-skylines-2-mod-template) and supporting documentation. It was a huge help!
+- Also thank you to CityRat for inspiring me to create my own EDM radio. His EDM mod can be found [here](https://thunderstore.io/c/cities-skylines-ii/p/CityRat/CityRatNetwork_EDM/).
 - Lastly, I want to extend the biggest thank you to the Cities 2 Modding Community. I am so thankful for everyone who creates this content in their free time just for fun. It's truly an amazing community and I encourage anyone who can to donate to their favorite mod creators. Here is their discord: https://discord.gg/cyp9QYXJBM
