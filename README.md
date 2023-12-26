@@ -13,7 +13,7 @@ Will contain multiple playlists/genres in the future, however currently only has
 - [ExtendedRadio](https://github.com/AlphaGaming7780/ExtendedRadio)
 - Cities: Skylines II (lol)
 
-## Tracklist
+# Tracklist
 1. Island - Seven Lions, Wooli, Trivecta
 2. Feel Something - ILLENIUM, Excision, I Prevail
 3. REDLINE - Virtual Riot
@@ -48,7 +48,7 @@ Will contain multiple playlists/genres in the future, however currently only has
 > ### Any comments or requests, feel free to message me.
 > Discord: @drknowsalot
 
-# Special Thanks
+## Special Thanks
 
 - Thanks to the creator of ExtendedRadio, Alpha Gaming aka TritonSupreme for your hard work creating the mod and providing me with help and support. Also thank you for making a [radio mod template](https://github.com/AlphaGaming7780/MyRadioMod)!
 - Thank you to Captain Of Coit for creating the original [mod template](https://github.com/Captain-Of-Coit/cities-skylines-2-mod-template) and supporting documentation. It was a huge help!
