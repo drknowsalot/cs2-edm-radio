@@ -2,7 +2,7 @@
     "namespace": "drknowsalot",
     "name": "drknowsalot_EDM_Radio",
     "description": "A variety of EDM radios for ExtendedRadio",
-    "version_number": "1.0.0",
+    "version_number": "1.0.1",
     "dependencies": [
       "TritonSupreme-ExtendedRadio-0.3.4"
     ],
