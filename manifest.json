@@ -1,9 +1,11 @@
 {
+    "namespace": "drknowsalot",
     "name": "drknowsalot_EDM_Radio",
+    "description": "A variety of EDM radios for ExtendedRadio",
     "version_number": "1.0.0",
-    "website_url": "https://github.com/drknowsalot/cs2-edm-radio",
-    "description": "A variety of EDM radios for ExtendedRadio.",
     "dependencies": [
-        "ExtendedRadio"
-    ]
-}
+      "TritonSupreme-ExtendedRadio-0.3.4"
+    ],
+    "website_url": "https://github.com/drknowsalot/cs2-edm-radio",
+    "FullName": "drknowsalot-drknowsalot_EDM_Radio_testing"
+  }

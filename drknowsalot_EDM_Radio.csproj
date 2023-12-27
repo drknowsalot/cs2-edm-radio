@@ -11,7 +11,7 @@
 		<TargetFramework>netstandard2.1</TargetFramework>
 		<AssemblyName>drknowsalot_EDM_Radio</AssemblyName>
 		<RootNamespace>drknowsalot_EDM_Radio</RootNamespace>
-		<Description>A variety of EDM radios for ExtendedRadio.</Description>
+		<Description>A variety of EDM radios for ExtendedRadio</Description>
 		<Version>1.0.0</Version>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<LangVersion>preview</LangVersion>
@@ -26,16 +26,12 @@
 		<NoWarn>MSB3277</NoWarn>
 	</PropertyGroup>
 
-	<!--
-		Uncomment this PropertyGroup to let the C# project read DLLs directory from your game directory,
-		and also allow the build to move the mod DLLs into the plugins directory for you
-	-->
 	<PropertyGroup>
-		<Cities2_Location>C:\Program Files (x86)\Steam\steamapps\common\Cities Skylines II</Cities2_Location>
+		<Cities2_Location>F:\Games\Steam\steamapps\common\Cities Skylines II</Cities2_Location>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Reference Include="$(Cities2_Location)\BepInEx\plugins\ExtendedRadio\ExtendedRadio.dll" />
+		<Reference Include="C:\Users\drkno\AppData\Roaming\Thunderstore Mod Manager\DataFolder\CitiesSkylines2\profiles\coding\BepInEx\plugins\TritonSupreme-ExtendedRadio\ExtendedRadio.dll" />
 	</ItemGroup>
 
 	<!--
@@ -43,9 +39,9 @@
 		above needs to be uncommented for this to work
 	-->
 	<ItemGroup>
-        <Reference Include="$(Cities2_Location)\Cities2_Data\Managed\Colossal.*.dll" Private="False"/>
-        <Reference Include="$(Cities2_Location)\Cities2_Data\Managed\Game.dll" Private="False"/>
-        <Reference Include="$(Cities2_Location)\Cities2_Data\Managed\Unity.*.dll" Private="False"/>
+        <Reference Include="$(Cities2_Location)\Cities2_Data\Managed\Colossal.*.dll" Private="False" />
+        <Reference Include="$(Cities2_Location)\Cities2_Data\Managed\Game.dll" Private="False" />
+        <Reference Include="$(Cities2_Location)\Cities2_Data\Managed\Unity.*.dll" Private="False" />
 		<Reference Include="cohtml.Net"><HintPath>$(Cities2_Location)\Cities2_Data\Managed\cohtml.Net.dll</HintPath><Private>False</Private></Reference>
 	</ItemGroup>
 
@@ -62,9 +58,9 @@
 		DO NOT make the proprietary DLLs for the game public, as the files are owned by PDX/CO. 
 	-->
 	<ItemGroup>
-		<Reference Include="libcs2/Colossal.*.dll" Private="False"/>
-		<Reference Include="libcs2/Game.dll" Private="False"/>
-		<Reference Include="libcs2/Unity.*.dll" Private="False"/>
+		<Reference Include="libcs2/Colossal.*.dll" Private="False" />
+		<Reference Include="libcs2/Game.dll" Private="False" />
+		<Reference Include="libcs2/Unity.*.dll" Private="False" />
 	</ItemGroup>
 
 	<!--
@@ -79,6 +75,7 @@
 	<!-- Set the default value for BepInExVersion -->
 	<PropertyGroup>
 		<BepInExVersion Condition="'$(BepInExVersion)' == ''">5</BepInExVersion>
+		<OutputType>Library</OutputType>
 	</PropertyGroup>
 
 	<!--
@@ -91,7 +88,7 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(BepInExVersion)' == '5'">
-		<PackageReference Include="BepInEx.Core" Version="5.4.*" IncludeAssets="compile"/>
+		<PackageReference Include="BepInEx.Core" Version="5.4.*" IncludeAssets="compile" />
 	</ItemGroup>
 
 	<PropertyGroup Condition="'$(BepInExVersion)' == '6'">
@@ -112,10 +109,6 @@
 		as long as we're not in CI
 	-->
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(CI)' != 'true'">
-		<Exec
-			Command="if not exist &quot; $(Cities2_Location)\BepInEx\plugins\$(ProjectName)&quot; mkdir &quot;$(Cities2_Location)\BepInEx\plugins\$(ProjectName)&quot;&#xD;&#xA;
-					copy /Y &quot;$(TargetDir)0Harmony.dll&quot; &quot;$(Cities2_Location)\BepInEx\plugins\$(ProjectName)\0Harmony.dll&quot;&#xD;&#xA;
-					copy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(Cities2_Location)\BepInEx\plugins\$(ProjectName)\$(ProjectName).dll&quot;&#xD;&#xA;"
-		/>
+		<Exec Command="if not exist &quot; $(Cities2_Location)\BepInEx\plugins\$(ProjectName)&quot; mkdir &quot;$(Cities2_Location)\BepInEx\plugins\$(ProjectName)&quot;&#xD;&#xA;&#xD;&#xA;					copy /Y &quot;$(TargetDir)0Harmony.dll&quot; &quot;$(Cities2_Location)\BepInEx\plugins\$(ProjectName)\0Harmony.dll&quot;&#xD;&#xA;&#xD;&#xA;					copy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(Cities2_Location)\BepInEx\plugins\$(ProjectName)\$(ProjectName).dll&quot;&#xD;&#xA;" />
 	</Target>
 </Project>
