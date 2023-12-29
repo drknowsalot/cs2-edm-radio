@@ -1,0 +1,19 @@
+# 1.0.0
+
+Initial Release. Includes Melodic Dubstep playlist.
+
+# 1.0.1
+
+Hotfix. Forgot to zip CustomRadios folder for Thunderstore install.
+
+# 1.0.2
+
+Another hotfix. Should now work just fine.
+
+# 1.0.3
+
+Attempt to update for ExtendedRadio 0.4.0
+
+# 1.1.0
+
+Successfully updated for ExtendedRadio 0.4.0
