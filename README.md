@@ -1,60 +1,90 @@
-# drknowsalot's EDM Radio Network
-An EDM Radio network for use with ExtendedRadio. This project is a mod for Cities: Skylines II.
+# Cities: Skylines 2 - C# Mod template
 
-Will contain multiple playlists/genres in the future, however currently only has Melodic Dubstep. I took some creative freedom with the curating the genre, some songs are more dubstep and some are more melodic.
+This repository template allows you to get started with Cities: Skylines 2 modding easily, all the way to building your mod on commit with GitHub Actions and publishing your mod automatically on Thunderstore.
 
-> All channels are ad-free.
+- [Requirements](#requirements)
+- [Usage](#usage)
+- [Renaming your project](#renaming-your-project)
+- [Set license details](#set-license-details)
+- [Incrementing version number](#incrementing-version-number)
+- [CI / GitHub Actions - Setup](#ci-github-actions-setup)
+- [Regarding BepInEx version 5 (Stable) VS 6 (Alpha/Unstable/Nightly)](#regarding-bepinex-version-5-stable-vs-6-alphaunstablenightly)
+- [Credits](#credits)
+- [Community](#community)
 
-## Download
-(future Thunderstore link) coming soon
-> Current version: 1.0.0
+# Requirements
 
-## Requirements
-- [ExtendedRadio](https://github.com/AlphaGaming7780/ExtendedRadio)
-- Cities: Skylines II (lol)
+- [Cities: Skylines 2](https://store.steampowered.com/app/949230/Cities_Skylines_II/) (duh)
+- [BepInEx 5.4.22](https://github.com/BepInEx/BepInEx/releases) or later
+- (Optional) [dotnet-script](https://github.com/dotnet-script/dotnet-script) (for `rename.csx` helper script)
+    - Installation `dotnet tool install -g dotnet-script`
 
+# Usage
 
-# Tracklist
+- Create a new repository based on this one
+- Clone your new repository to your computer
+- Uncomment and update the `Cities2_Location` variable in `MyCoolMod.csproj`
+- Run `make build`
 
-**Melodic Dubstep playlist**
+After running the last command, the mod should be automatically copied to your game directory,
+so launching the game should include running the mod you just started :)
 
-1. Island - Seven Lions, Wooli, Trivecta
-2. Feel Something - ILLENIUM, Excision, I Prevail
-3. REDLINE - Virtual Riot
-4. Colorblind - Panda Eyes
-5. Walk On Water (Wooli & Trivecta Remix) - SLANDER, Wooli, Trivecta, Dylan Matthew, RORY
-6. Erase You - Excision, Wooli, HALIENE
-7. Zombie - ILLENIUM, Excision, Wooli, Valerie Broussard
-8. One More Day - Jason Ross, Blanke, Chandler Leighton
-9. Don't Look Down (Hold On) - Excision, Wooli, Codeko
-10. Oxygen - Excision, Wooli, Trivecta
-11. Euphoria - Panda Eyes
-12. Shadows - Seven Lions, Wooli, Amidy
-13. We're Not Alone - Virtual Riot
-14. Gorgeous - ILLENIUM, Blanke, Bipolar Sunshine
-15. Gold (Stupid Love) - ILLENIUM, Excision, Shallows
-16. Take My Hand (Teminite Remix) - Panda Eyes, Teminite, Azuria Sky
-17. Rewrite - Virtual Riot
-18. Quantum (Virtual Riot Remix) - Astronaut, Virtual Riot
-19. Salvation - Excision, Dion Timmer, Alexis Donn
-20. Hold On - Teminite
-21. Fractures (Trivecta Remix) - ILLENIUM, Trivecta, Nevve
-22. Emotional (Virtual Riot Remix) - Flux Pavilion, Virtual Riot, Matthew Koma
-23. Back Again - Panda Eyes
-24. Feeling This Way - Ray Volpe
-25. Superhuman (Spag Heddy Remix) - SLANDER, Spag Heddy, Eric Leva
-26. Stop Thinking (MitiS Remix) - Seven Lions, MitiS, Lights
-27. Another Me - Seven Lions, Excision, Wooli, Dylan Matthew
-28. First Time - Seven Lions, SLANDER, Dabin, Dylan Matthew
-29. Shivering - ILLENIUM, Spiritbox
-30. Homesick - MitiS, SOUNDR
+# Renaming your project
 
-> ### Any comments or requests, feel free to message me.
-> Discord: @drknowsalot - Possible plans for future playlists: NCS classics, old Skrillex, melodic, ILLENIUM (my fav artist)
+You can leverage the helper script in `scripts/rename.csx` in order to replace "MyCoolMod" with whatever you want to name your project. Usage:
 
-## Special Thanks
+```
+$ dotnet script scripts\rename.csx "MyCoolMod" "AnotherModIMade"
+```
 
-- Thanks to the creator of ExtendedRadio, Alpha Gaming/TritonSupreme for your hard work creating the mod and providing me with help and support. Also thank you for making this [radio mod template](https://github.com/AlphaGaming7780/MyRadioMod)!
-- Thank you to Captain Of Coit for creating the original CS: II [mod template](https://github.com/Captain-Of-Coit/cities-skylines-2-mod-template) and supporting documentation. It was a huge help!
-- Also thank you to CityRat for inspiring me to create my own EDM radio. His EDM mod can be found [here](https://thunderstore.io/c/cities-skylines-ii/p/CityRat/CityRatNetwork_EDM/).
-- Lastly, I want to extend the biggest thank you to the Cities 2 Modding Community. I am so thankful for everyone who creates this content in their free time just for fun. It's truly an amazing community and I encourage anyone who can to donate to their favorite mod creators. Here is their Discord: https://discord.gg/cyp9QYXJBM
+# Set license details
+
+You'll need to update `LICENSE` with the correct details for `<Year>` and `<Author>`, and change "MyCoolMod" to your mod name if you haven't already.
+
+# Incrementing version number
+
+- Update `.csproj` file with new version number
+- Update `thunderstore.toml` file with new version number
+- Update `CHANGELOG` to describe the changes you've made between this and previous version
+- Commit version bump
+- Do a git tag with the new version number
+    - `git tag -a v0.2.0 -m v0.2.0`
+- Push your changes + tags
+    - `git push origin master --tags`
+
+# CI / GitHub Actions - Setup
+
+In order to get the CI/GitHub Actions workflow to work, you have to do a couple of things.
+
+- Create a new private repository with all the game DLLs that you require for building your mod
+- Create a new GitHub Personal Access Token ("PAT") that has only READ access to the created private repository
+- Create a new secret variable in GitHub Actions called `GH_PAT` that has your PAT with read access to the private repository
+
+Now the CI job should work as expected :)
+
+# Regarding BepInEx version 5 (Stable) VS 6 (Alpha/Unstable/Nightly)
+
+Currently, this mod template defaults to building against BepInEx version 6 (unstable pre-release). If you'd like to instead use Stable BepInEx version 5, you can run the build like this:
+
+```
+$ make build BEPINEX_VERSION=5
+```
+
+In order to run code only for one BepInEx version, you can do something like this:
+
+```
+#if BEPINEX_V6
+    using BepInEx.Unity.Mono;
+#endif
+```
+
+That would only run `using BepInEx.Unity.Mono` when you're building the project for BepInEx 6. Add in a `else` if you want to do something different when it's version 5.
+
+# Credits
+
+- Thanks to Cities Skylines 2 Unofficial Modding Discord
+- Particular thanks to [@StudioLE](https://github.com/StudioLE) who helped with feedback and improving .csproj setup
+
+# Community
+
+Looking to discuss Cities: Skylines 2 Unofficial modding together with other modders? You're welcome to join our "Cities 2 Modding" Discord, which you can find here: https://discord.gg/vd7HXnpPJf
