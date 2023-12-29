@@ -1,21 +1,15 @@
-﻿using System.IO.Compression;
-using System.IO;
-using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Reflection;
 using BepInEx;
 using HarmonyLib;
-using System.Collections.Generic;
-using System.Text;
-using UnityEngine;
-using drknowsalot_EDM_Radio;
 
 #if BEPINEX_V6
     using BepInEx.Unity.Mono;
 #endif
 
 namespace drknowsalot_EDM_Radio
-{
+{   
+    [BepInDependency("ExtendedRadio")]
     [BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
     public class Plugin : BaseUnityPlugin
     {
@@ -31,12 +25,6 @@ namespace drknowsalot_EDM_Radio
             foreach (var patchedMethod in patchedMethods) {
                 Logger.LogInfo($"Patched method: {patchedMethod.Module.Name}:{patchedMethod.Name}");
             }
-        }
-
-        // Keep in mind, Unity UI is immediate mode, so OnGUI is called multiple times per frame
-        // https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnGUI.html
-        private void OnGUI() {
-            GUI.Label(new Rect(10, 10, 300, 20), $"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
         }
     }
 }

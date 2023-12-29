@@ -2,11 +2,11 @@
 schemaVersion = "0.0.1"
 
 [package]
-namespace = "CaptainOfCoit"
-name = "MyCoolMod"
-versionNumber = "0.1.0"
-description = "Example mod description"
-websiteUrl = "https://thunderstore.io"
+namespace = "drknowsalot"
+name = "drknowsalot_EDM_Radio"
+versionNumber = "1.0.0"
+description = "A variety of EDM radios for ExtendedRadio."
+websiteUrl = "https://github.com/drknowsalot/cs2-edm-radio"
 containsNsfwContent = false
 
 [package.dependencies]
